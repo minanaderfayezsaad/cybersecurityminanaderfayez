@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard Intelligence - Dashboard</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <header class="dashboard-header">
+        <div class="brand-section">
+            <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M8 11.5h2l1.5-3 2 6 1.5-3h2"></path>
+            </svg>
+            <div class="brand-text-wrapper">
+                <h1 class="brand-title-text">CyberGuard Intelligence</h1>
+                <p class="brand-subtitle-text">Advanced Threat Detection & Analysis</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span class="status-text">Systems Operational</span>
+            </div>
+            <div class="user-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-wrapper">
+        <div class="nav-container">
+            <a href="homepage.html" class="nav-item active">Dashboard</a>
+            <a href="malware.html" class="nav-item">Malware</a>
+            <a href="procedures.html" class="nav-item">Procedures</a>
+            <a href="#" class="nav-item" onclick="openSubModal(event)">IR Bot</a>
+            <div class="nav-cyan-dot"></div>
+        </div>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card m-red">
+            <div class="metric-header">
+                <svg class="metric-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                    </path>
+                </svg>
+                <span class="metric-trend">-12%</span>
+            </div>
+            <div class="metric-val">1,247</div>
+            <div class="metric-name">Threats Detected</div>
+        </div>
+
+        <div class="metric-card m-green">
+            <div class="metric-header">
+                <svg class="metric-icon" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span class="metric-trend">+8%</span>
+            </div>
+            <div class="metric-val">3,891</div>
+            <div class="metric-name">Blocked Attacks</div>
+        </div>
+
+        <div class="metric-card m-yellow">
+            <div class="metric-header">
+                <svg class="metric-icon" viewBox="0 0 24 24">
+                    <rect width="8" height="14" x="8" y="6" rx="4" />
+                    <path d="m19 7-3 2" />
+                    <path d="m5 7 3 2" />
+                    <path d="m19 19-3-2" />
+                    <path d="m5 19 3-2" />
+                    <path d="M20 13h-4" />
+                    <path d="M4 13h4" />
+                    <path d="m10 4 1 2" />
+                    <path d="m14 4-1 2" />
+                </svg>
+                <span class="metric-trend">-5%</span>
+            </div>
+            <div class="metric-val">23</div>
+            <div class="metric-name">Vulnerabilities</div>
+        </div>
+
+        <div class="metric-card m-orange">
+            <div class="metric-header">
+                <svg class="metric-icon" viewBox="0 0 24 24">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+                <span class="metric-trend">+2</span>
+            </div>
+            <div class="metric-val">7</div>
+            <div class="metric-name">Active Threats</div>
+        </div>
+    </div>
+
+    <div class="main-grid">
+        <div class="recent-threats">
+            <div class="section-head">
+                <h2 class="section-title">Recent Threats</h2>
+                <p class="section-subtitle">Latest security incidents detected in the last 24 hours</p>
+            </div>
+            <div class="threats-container">
+                <div class="threat-card">
+                    <div class="threat-top">
+                        <div class="threat-name-group">
+                            <div class="t-dot t-orange"></div>
+                            <h3 class="threat-name">Phishing Attack</h3>
+                            <span class="threat-badge b-high">high</span>
+                        </div>
+                        <span class="threat-time">5 minutes ago</span>
+                    </div>
+                    <p class="threat-desc">Sophisticated phishing attempt targeting finance department</p>
+                    <p class="threat-src">Source: <span>email@malicious-site.com</span></p>
+                </div>
+
+                <div class="threat-card">
+                    <div class="threat-top">
+                        <div class="threat-name-group">
+                            <div class="t-dot t-red"></div>
+                            <h3 class="threat-name">Malware Detection</h3>
+                            <span class="threat-badge b-crit">critical</span>
+                        </div>
+                        <span class="threat-time">12 minutes ago</span>
+                    </div>
+                    <p class="threat-desc">Ransomware variant detected on endpoint device</p>
+                    <p class="threat-src">Source: <span>192.168.1.45</span></p>
+                </div>
+
+                <div class="threat-card">
+                    <div class="threat-top">
+                        <div class="threat-name-group">
+                            <div class="t-dot t-yellow"></div>
+                            <h3 class="threat-name">DDoS Attempt</h3>
+                            <span class="threat-badge b-med">medium</span>
+                        </div>
+                        <span class="threat-time">1 hour ago</span>
+                    </div>
+                    <p class="threat-desc">Distributed denial of service attack mitigated</p>
+                    <p class="threat-src">Source: <span>Multiple IPs</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="global-container">
+            <div class="section-head">
+                <h2 class="section-title">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                    Global Threats
+                </h2>
+                <p class="section-subtitle">Threat origins by country</p>
+            </div>
+
+            <div class="country-list">
+                <div class="country-item">
+                    <div class="country-info">
+                        <span>United States</span>
+                        <span>45</span>
+                    </div>
+                    <div class="c-bar-bg">
+                        <div class="c-bar-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="country-item">
+                    <div class="country-info">
+                        <span>China</span>
+                        <span>38</span>
+                    </div>
+                    <div class="c-bar-bg">
+                        <div class="c-bar-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="country-item">
+                    <div class="country-info">
+                        <span>Russia</span>
+                        <span>32</span>
+                    </div>
+                    <div class="c-bar-bg">
+                        <div class="c-bar-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="country-item">
+                    <div class="country-info">
+                        <span>North Korea</span>
+                        <span>28</span>
+                    </div>
+                    <div class="c-bar-bg">
+                        <div class="c-bar-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="country-item">
+                    <div class="country-info">
+                        <span>Iran</span>
+                        <span>22</span>
+                    </div>
+                    <div class="c-bar-bg">
+                        <div class="c-bar-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-bottom">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>165 threats from 47 countries today</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="shared.js"></script>
+</body>
+
+</html>
